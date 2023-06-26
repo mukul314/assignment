@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internship task</title>
+  <style>
+    body {
+      display: flex;
+    }
+
+    #left-panel {
+      width: 200px;
+      background-color: lightgray;
+      padding: 10px;
+      height: 650px;
+      background-color: #333;
+    
+    }
+
+    #left-panel li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+      padding: 5px 0;
+      }
+
+      #left-panel li a:hover {
+        color: grey;
+      }
+
+    #content {
+      flex-grow: 1;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="left-panel">
+    <ul>
+      <li><a href="#" onclick="showContent('home')">Home</a></li>
+      <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+      <li><a href="#" onclick="showContent('information')">Information</a></li>
+      <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+    </ul>
+  </div>
+
+  <div id="content" style="width:200px" >
+    <h2>Welcome to the website</h2>
+    <p>Select a component from the left panel to view its content.</p>
+  </div>
+
+  <script>
+    function showContent(component) {
+      var contentElement = document.getElementById('content');
+      var content;
+
+      if (component === 'home') {
+        content = '<h2>Guide</h2><p>Our comprehensive guide is designed to assist you every step of the way. Whether you are a beginner or an experienced user, this guide will provide you with detailed instructions, tips, and best practices. From setting up your account to mastering advanced techniques, we cover it all. Follow our guide to unlock the full potential of our platform and achieve your goals with ease</p>';
+      } else if (component === 'contact') {
+        content = '<h2>Contact</h2><p>We value your feedback and inquiries. Our dedicated contact team is here to assist you with any questions, concerns, or suggestions you may have. Feel free to reach out to us via phone, email, or through our convenient contact form below. We strive to provide prompt and helpful responses, ensuring that your experience with us is smooth and enjoyable. We look forward to hearing from you!</p>';
+      } else if (component === 'information') {
+        content = '<h2>Information</h2><p>Our information section is a treasure trove of knowledge on various subjects. Dive into a vast array of topics, ranging from technology and science to arts and culture. Explore informative articles, insightful analyses, and thought-provoking essays. Our goal is to provide you with accurate, engaging, and up-to-date information that sparks curiosity and expands your horizons. Delve into our information section and embark on an enlightening journey of discovery.</p>'
+
+      } else if (component === 'guide') {
+        content = "<h2>Guide</h2><p>Welcome to our comprehensive guide! Whether you're a novice or an experienced user, this guide is your roadmap to success. We understand that navigating through complex processes can be overwhelming, but fear not! Our step-by-step guide will walk you through each stage, providing clear instructions, helpful tips, and valuable insights.</p>";
+      } else {
+        content = '<h2>Invalid component</h2><p>Please select a valid component.</p>';
+      }
+
+      contentElement.innerHTML = content;
+    }
+  </script>
+</body>
+</html>
